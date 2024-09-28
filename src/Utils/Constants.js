@@ -5,6 +5,7 @@ export const LOGO_URL="https://cdn.cookielaw.org/logos/dd6b162f-1a32-456a-9cfe-8
 
 export const URL="https://wallpapercave.com/wp/wp1866691.jpg"
 
+export const IMG_CDN_URL= "https://image.tmdb.org/t/p/w500/"
 
 export const API_OPTIONS = {
     method: 'GET',
