@@ -7,7 +7,7 @@ import {auth} from "../Utils/Firebase"
 
 import { useDispatch } from 'react-redux';
 import { addUser } from '../Utils/userSlice';
-import { URL } from '../Utils/Constants';
+import { IMG_URL, URL } from '../Utils/Constants';
 
 
 
@@ -30,7 +30,7 @@ const Login = () => {
   const handleButtonClick =() =>{
     //validate form data
       const nameValue = isSignInForm ? null : name.current?.value; 
-    // console.log(nameValue)
+    
    const message= checkValidate(email.current.value,password.current.value,nameValue,isSignInForm);
    setErrorMessage(message);
    if(message) return;
@@ -98,7 +98,7 @@ else{
     <div>
       <Header />
         <div className='absolute'> 
-         <img className=""src ="https://assets.nflxext.com/ffe/siteui/vlv3/85ff76db-39e5-423a-afbc-97d3e74db71b/null/IN-en-20240909-TRIFECTA-perspective_b22117e0-4610-4d57-a695-20f77d241a4a_large.jpg"  alt="backgroundimage" />    
+         <img className=""src ={IMG_URL}  alt="backgroundimage" />    
         </div>
         <form onSubmit={(e)=>e.preventDefault()}
         className="text-white absolute w-3/12  p-12 bg-black my-36 mx-auto right-0 left-0 bg-opacity-80">
