@@ -69,29 +69,30 @@ const handleSignOut = () =>  {
    }
 
   return (
-    <div className="w-screen absolute px-8 py-2 bg-gradient-to-b from-black z-10 flex justify-between sm:bg-blue-900 md:flex-row justify-between bg-green-400">
+    <div className="absolute w-screen px-8 py-2 bg-gradient-to-b from-black z-10 flex flex-col md:flex-row justify-between ">
       <img 
-      className="w-44 " 
+      className="w-40 mx-auto  md:mx-0 " 
       src= {LOGO_URL}
       alt="logo"
        />
           {user &&
           (
-            <div className='p-2 flex gap-1'> 
-            {showGptSearch && (<select className='p-2m-2 bg-gray-900 text-white rounded-lg 'onClick={handleLanguageChange}>
+            <div className='p-2 flex justify justify-between'> 
+            {showGptSearch && (<select className=' mb-2 md:p-2m-2 bg-gray-900 text-white rounded-lg 'onClick={handleLanguageChange}>
             {SUPPORTED_LANGUAGES.map((lang) =>(
-              <option key={lang.indentifier} value ={lang.identifier}>{lang.name}
+              <option key={lang.identifier} value ={lang.identifier}>{lang.name}
                </option>
               ))}
              
             </select>)}
             <button 
-            className='py-2 px-4 m-2 bg-red-700 rounded-lg text-white'
+            className='  md:py-2 px-4 m-2 bg-red-700 rounded-lg text-white'
             onClick={handleGptSearchClick}
-            >{showGptSearch? "Homepage" :"GPT Search"}</button>
+            >{showGptSearch ? "Homepage" :"GPT Search"}
+            </button>
              <img src ={user.photoURL}
-              className="w-12 h-12 "  alt="usericon" />
-             <button className='text-white' 
+              className=" hidden md:block w-12 h-12 "  alt="usericon" />
+             <button className='text-base text-white md:text-white' 
              onClick={handleSignOut}>Sign Out</button>
           </div>
         )}
